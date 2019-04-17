@@ -1,0 +1,47 @@
+spring:
+    datasource:
+          type: com.alibaba.druid.pool.DruidDataSource
+          driver-class-name: oracle.jdbc.driver.OracleDriver
+          #url: jdbc:oracle:thin:@192.168.20.209:1521:payment
+          url: jdbc:oracle:thin:@192.168.20.15:1521:mobopay2
+          username: mobo2
+          password: ZAQ!cde3XS$e
+          druid:
+          # 初始化大小，最小，最大
+            initial-size: 5
+            min-idle: 5
+            max-active: 20
+            # 配置获取连接等待超时的时间
+            max-wait: 60000
+            # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+            time-between-eviction-runs-millis: 60000
+            # 配置一个连接在池中最小生存的时间，单位是毫秒
+            min-evictable-idle-time-millis:  300000
+            #validation-query: select 1 from sys_user
+            test-while-idle: true
+            test-on-borrow: true
+            test-on-return: false
+            # 打开PSCache，并且指定每个连接上 Cache的大小
+            pool-prepared-statements: true
+            max-pool-prepared-statement-per-connection-size: 20
+    jpa:
+      hibernate:
+        ddl-auto: none
+        naming:
+          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      show-sql: true
+      database-platform: org.hibernate.dialect.Oracle10gDialect
+      database: oracle
+      properties:
+        hibernate:
+          current_session_context_class: org.springframework.orm.hibernate4.SpringSessionContext
+          cache:
+            use_query_cache: true
+            use_second_level_cache: true
+            provider_configuration_file_resource_path: ehcache.xml
+            region:
+              factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+    cache:
+      type: ehcache
+      ehcache:
+        config: classpath:config/ehcache.xml
