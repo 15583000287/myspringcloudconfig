@@ -2,7 +2,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver #新的驱动类，是自动加载的，可以省略手动加载驱动类
-    url: jdbc:mysql://139.196.94.253:3306/jpa2?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://139.196.94.253:3306/jpa1?useUnicode=true&characterEncoding=utf8
     username: root
     password: 123
   jpa:
