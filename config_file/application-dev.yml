@@ -5,7 +5,6 @@ spring:
     url: jdbc:mysql://139.196.94.253:3306/jpa?useUnicode=true&characterEncoding=utf8
     username: root
     password: 123
-
   jpa:
     hibernate:
       ddl-auto: update
