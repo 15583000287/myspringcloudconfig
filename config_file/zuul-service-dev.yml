@@ -10,5 +10,4 @@ zuul:
    api-b: #点单服务网关配置
      path: /api-order/**
      serviceId: order-service
-   api-c:
      
