@@ -3,10 +3,10 @@
 #默认读取Eureka注册列表 默认30秒间隔
 zuul:
  routes:
-   api-a:
+   api-a: #会员服务网关配置
      path: /api-member/**   #访问只要是/api-member/ 开头的直接转发到member-service服务
      #服务名
      serviceId: member-service
-   api-b:
+   api-b: #点单服务网关配置
      path: /api-order/**
      serviceId: order-service
