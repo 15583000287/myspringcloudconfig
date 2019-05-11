@@ -30,4 +30,4 @@ zuul:
      serviceId: member-service
    api-b: #订单服务网关配置
      path: /api-order/**
-     serviceId: order-serv
+     serviceId: order-service
